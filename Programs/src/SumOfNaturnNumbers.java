@@ -6,6 +6,10 @@ public class SumOfNaturnNumbers {
 
         int number = scanner.nextInt();
 
+        if(number < 0) {
+            System.out.println("Invalid Input");
+            return;
+        }
 
 //        System.out.println("Sum of first natural number till "+number+" is :  "+ getSum(number));
         System.out.println("Sum of first natural number till "+number+" is :  "+ getSumUsingAP(number));
