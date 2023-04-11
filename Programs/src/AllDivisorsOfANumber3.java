@@ -4,7 +4,8 @@ public class AllDivisorsOfANumber3 {
     static void printDivisors(int n) {
         int i = 1;
 
-        // print all divisors from 1 (inclusive) to square root of n (exclusive)
+        // print all divisors from 1 (inclusive) to square root of n (exclusive) in n % i form
+        // print all smaller divisors
         for(i=1; i*i < n; i++)
         {
             if(n % i == 0)
@@ -13,7 +14,8 @@ public class AllDivisorsOfANumber3 {
             }
         }
 
-        // print all divisors from square root n (inclusive) to n (exclusive)
+        // print all divisors from square root n (inclusive) to 1 (exclusive) in n / i form
+        // print all greater divisors
         for(; i >= 1; i--)
         {
             if(n % i == 0)
