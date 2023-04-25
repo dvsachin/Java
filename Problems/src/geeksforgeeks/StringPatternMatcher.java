@@ -1,4 +1,4 @@
-package ArraysAndString;
+package geeksforgeeks;
 
 import java.util.Scanner;
 
