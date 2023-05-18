@@ -30,3 +30,23 @@ public class NoParameterLambdaExpression {
         return  () -> System.out.println("Hello");
     }
 }
+
+/*
+You need to use lambda expression to print "Hello".
+
+Example 1 :
+
+Input:
+No Input
+Output:
+Hello
+Example 2 :
+
+Input:
+No Input
+Output:
+Hello
+
+User Task:
+You need to complete the function helperFunction that does not take any argument. This function expects an object of Hello as a return type. Hello is an interface that has the member function sayHello. Your helperFunction uses lambda expression to implement the sayHello within helperFunction itself. Then you return the object. The driver code will call the sayHello method using the returned object.
+ */
