@@ -15,7 +15,7 @@ public class ArrayInsertAtEnd {
             }
             int element = sc.nextInt();
 
-            Insert obj = new Insert();
+            InsertAtEnd obj = new InsertAtEnd();
 
             obj.insertAtEnd(arr,sizeOfArray,element);
 
@@ -28,7 +28,7 @@ public class ArrayInsertAtEnd {
         }
     }
 }
-class Insert {
+class InsertAtEnd {
     // You only need to insert the given element at
     // the end, i.e., at index sizeOfArray - 1. You may
     // assume that the array already has sizeOfArray - 1
