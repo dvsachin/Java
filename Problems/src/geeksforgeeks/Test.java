@@ -16,7 +16,7 @@ public class Test implements Runnable{
 //        int[] arr = {65,66,67,68};
 //        String s = new String(arr,1,3);
 //        System.out.println(s);
-
+/*
         Thread t = new Thread((new Test()));
         t.start();
 
@@ -25,6 +25,10 @@ public class Test implements Runnable{
         t.join();
 
         System.out.printf("%d",2);
+
+
+
+ */
 
 
     }
