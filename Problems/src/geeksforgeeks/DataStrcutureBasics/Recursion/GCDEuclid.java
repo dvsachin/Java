@@ -1,4 +1,4 @@
-package DataStructuresBasic.Recursion;
+package geeksforgeeks.DataStrcutureBasics.Recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
