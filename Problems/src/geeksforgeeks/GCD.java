@@ -16,6 +16,12 @@ public class GCD {
         }
         return result;
 
+        /*
+         if (a == 0)
+            return b;
+
+        return gcd(b % a, a);
+         */
 
     }
 
