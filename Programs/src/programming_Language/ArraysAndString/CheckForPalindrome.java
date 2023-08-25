@@ -10,7 +10,7 @@ public class CheckForPalindrome {
 
         boolean palindromeFlag = true;
 
-        while(start < end) {
+        while(start < end) { // n/2 times
             if(str.charAt(start) != str.charAt(end)) {
                 palindromeFlag = false;
                 break;
