@@ -1,5 +1,5 @@
 package geeksforgeeks.School_Level;
-
+// https://practice.geeksforgeeks.org/problems/sum-palindrome3857/1
 public class SumPalindrome {
     static long isSumPalindrome(long n){
         // code here
@@ -33,3 +33,28 @@ public class SumPalindrome {
         return reverse;
     }
 }
+
+/*
+Given a number, reverse it and add it to itself unless it becomes a palindrome or number of iterations becomes more than 5.
+
+Example 1:
+
+Input: n = 23
+Output: 55
+Explanation: reverse(23) = 32,then 32+23
+= 55 which is a palindrome.
+
+Example 2:
+Input: n = 30 Output: 33
+Explanation: reverse(30) = 3,then 3+30
+= 33 which is palindrome.
+
+Example 3:
+Input: n = 101 Output: 101
+
+Example 4:
+Input: n = 73 Output: 121
+
+Example 5:
+Input: n = 4762 Output: -1
+ */
