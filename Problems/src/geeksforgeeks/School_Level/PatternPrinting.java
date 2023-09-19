@@ -3,11 +3,19 @@ package geeksforgeeks.School_Level;
 public class PatternPrinting {
     static void printPattern(int N){
         // code here
+        /* TC = O(n^2)
         for(int i=1; i<=N; i++) {
             for(int j=1; j<=i; j++) {
                 System.out.print("*");
             }
             System.out.print(" ");
+        }
+         */
+        // TC = O(n)
+        StringBuilder st = new StringBuilder();
+        for(int i=0;i<N;i++){
+            st.append("*");
+            System.out.print(st+" ");
         }
     }
 }
