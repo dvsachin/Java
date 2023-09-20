@@ -7,7 +7,7 @@ public class TruncateSentence {
         StringBuilder temp = new StringBuilder();
 
         for(int i=0; i<k; i++) {
-            temp.append(str[i]+" ");
+            temp.append(str[i]).append(" ");
         }
 
         return temp.toString().trim();
