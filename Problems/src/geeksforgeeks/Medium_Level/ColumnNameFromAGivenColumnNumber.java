@@ -6,11 +6,18 @@ public class ColumnNameFromAGivenColumnNumber {
         StringBuffer ans = new StringBuffer();
 
         while(n > 0) {
-            char ch = (char) ('A' + (n-1) % 26);
+            char ch = (char) ('A' + (n-1) % 26); // // n-1 means A denotes when n%26 = 0
             ans.append(ch);
             n =  (n - 1) / 26;
         }
-
+/*
+        StringBuilder sb = new StringBuilder();
+        while (n-- >0) { // n-- means A denotes when n%26 = 0
+            sb.append((char) 'A'+(n%26));
+            n = n/26;
+        }
+        return sb.reverse().toString();
+*/
         return ans.reverse().toString();
     }
 }
