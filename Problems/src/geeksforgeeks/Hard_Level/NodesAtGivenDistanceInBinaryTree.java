@@ -4,52 +4,46 @@ package geeksforgeeks.Hard_Level;
 import java.util.*;
 
 public class NodesAtGivenDistanceInBinaryTree {
-    public static ArrayList<Integer> KDistanceNodes(Node root, int target , int K) {
+    public static ArrayList<Integer> KDistanceNodes(Node root, int target , int k) {
         // return the sorted list of all nodes at k dist
-        ArrayList<Integer> res= new ArrayList<>();
-        if(root == null) return res;
-        HashMap<Node, Node> parentMap = new HashMap<>();
-        findParent(parentMap, root);
-        Queue<Node> q = new LinkedList<>();
-        HashSet<Node> visited = new HashSet<>();
-        q.add(new Node(target));
+        ArrayList<Integer> list = new ArrayList<>();
+        findKDN(root,target,k,list);
+        Collections.sort(list);
+        return list;
+    }
 
-        while(!q.isEmpty()){
-            int size= q.size();
-            for(int i =0; i <size; i++){
-                Node curr = q.poll();
-                visited.add(curr);
-                if(K == 0){
-                    res.add(curr.data);
-                }
-                if(parentMap.containsKey(curr) && !visited.contains(parentMap.get(curr))){
-                    q.add(parentMap.get(curr));
-                }
-
-                if(curr.left != null && !visited.contains(curr.left)){
-                    q.add(curr.left);
-                }
-
-                if(curr.right != null && !visited.contains(curr.right)){
-                    q.add(curr.right);
-                }
-            }
-            K--;
-            if(K < 0) break;
+    static void findKDNdown(Node node, int k, ArrayList<Integer> list){
+        if(node==null || k<0) return;
+        if(k==0){
+            list.add(node.data);
+            return;
         }
-        return res;
+
+        findKDNdown(node.left,k-1,list);
+        findKDNdown(node.right,k-1,list);
     }
 
-    private static void findParent(HashMap<Node, Node> hm, Node root){
-        if(root == null) return;
-        if(root.left != null)
-            hm.put(root.left, root);
+    static int findKDN(Node node, int target, int k, ArrayList<Integer> list){
+        if(node==null) return -1;
+        if(node.data==target){
+            findKDNdown(node,k,list);
+            return 0;
+        }
 
-        if(root.right != null)
-            hm.put(root.right, root);
+        int ld = findKDN(node.left,target,k,list);
+        if(ld!=-1){
+            if(ld+1==k) list.add(node.data);
+            else findKDNdown(node.right,k-ld-2,list);
+            return ld+1;
+        }
 
-        findParent(hm, root.left);
-        findParent(hm, root.right);
-        return;
+        int rd = findKDN(node.right,target,k,list);
+        if(rd!=-1){
+            if(rd+1==k) list.add(node.data);
+            else findKDNdown(node.left,k-rd-2,list);
+            return rd+1;
+        }
+        return -1;
     }
+
 }

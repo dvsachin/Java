@@ -11,7 +11,6 @@ public class SumOfOddAndEvenElements {
         }
 
         return new int[] {oddSum,evenSum};
-
     }
 }
 /*
