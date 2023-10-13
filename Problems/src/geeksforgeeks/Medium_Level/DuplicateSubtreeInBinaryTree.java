@@ -1,4 +1,8 @@
 package geeksforgeeks.Medium_Level;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /* A Binary Tree node
 
 class Node
@@ -17,7 +21,25 @@ class Node
 public class DuplicateSubtreeInBinaryTree {
     int dupSub(Node root) {
         // code here
+        HashMap<String,Integer> hm = new HashMap<>();
+        solve(root.left,hm);
+        solve(root.right,hm);
+
+        for(Map.Entry<String,Integer> e : hm.entrySet()) if(e.getValue()>1) return 1;
         return 0;
+    }
+
+    String solve(Node node, HashMap<String,Integer> hm){
+        StringBuilder sb = new StringBuilder();
+        if(node==null) return "n";
+        if(node.right==null && node.left==null) return node.data+",";
+
+        sb.append(solve(node.left,hm));
+        sb.append(solve(node.right,hm));
+        sb.append(node.data).append(",");
+        String s = sb.toString();
+        hm.put(s,hm.getOrDefault(s,0)+1);
+        return s;
     }
 }
 /*
