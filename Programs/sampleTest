@@ -1,0 +1,15 @@
+
+
+Output:
+    // static control flow  -started main method
+    // for Parent object    -instance control flow
+    0
+    first instance block
+    second instance block
+    Parent class constructor
+    main method
+
+
+
+
+
