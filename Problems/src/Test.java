@@ -5,22 +5,18 @@ import java.io.ObjectInputStream;
 import java.text.DateFormat;
 import java.util.Scanner;
 
- class TooOldException extends RuntimeException {
-     TooOldException(String s) {
-         super(s);
-     }
- }
- class TooYoungException extends RuntimeException {
-     TooYoungException(String s) {
-         super(s);
-     }
- }
- class AgeTesting {
+class MyRunnable implements Runnable {
+
+    @Override
+    public void run() {
+
+    }
+}
+ class Test {
      public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
-         int input = scanner.nextInt();
-         if(input < 18) throw new TooYoungException("we don't do child labour");
-         else if(input > 60) throw  new TooOldException("working age is over");
+         MyRunnable r = new MyRunnable();
+         Thread t1 = new Thread();
+         Thread t2 = new Thread(r);
      }
  }
 
